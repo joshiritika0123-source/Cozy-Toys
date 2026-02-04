@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Toys</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+
+    <!-- Logo -->
+   <div class="d-flex align-items-center cozy-header">
+
+  <!-- LOGO -->
+  <a class="navbar-brand d-flex align-items-center cozy-logo me-3" href="#">
+    <span class="bear-icon">🧸</span>
+    <span class="site-name ms-2">Cozy Toys</span>
+  </a>
+
+  <!-- SEARCH BAR -->
+  <div class="cozy-search d-none d-md-flex">
+    <span class="search-category">Soft Toys</span>
+    <input type="text" placeholder="I'm searching for..." />
+    <button class="search-btn">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+  </div>
+
+</div>
+<!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center cozy-nav-icons">
+
+  <!-- HOME ICON -->
+  <li class="nav-item">
+    <a class="nav-link icon-link" href="#">
+      <i class="fa-solid fa-house"></i>
+    </a>
+  </li>
+
+  <!-- LOGIN ICON -->
+  <li class="nav-item">
+    <a class="nav-link icon-link" href="#">
+      <i class="fa-solid fa-user icon-link" onclick="openLoginPopup()"></i>
+
+    </a>
+  </li>
+
+  <!-- WISHLIST -->
+  <li class="nav-item position-relative">
+    <i class="fa-regular fa-heart icon-link"></i>
+    <span class="badge-count">0</span>
+  </li>
+
+  <!-- CART -->
+  <li class="nav-item position-relative">
+    <i class="fa-solid fa-cart-shopping icon-link"></i>
+    <span class="badge-count">0</span>
+  </li>
+
+  <!-- THEME TOGGLE -->
+  <li class="nav-item">
+    <i id="themeIcon" class="fa-solid fa-moon icon-link theme-icon" onclick="toggleTheme()"></i>
+  </li>
+
+</ul>
+
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- ================= SLIDER ================= -->
+<div id="toyCarousel" class="carousel slide mt-5 pt-4" data-bs-ride="carousel" data-bs-interval="2000">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="https://cdn.pixabay.com/photo/2018/02/16/19/25/soft-toys-3158361_1280.jpg" alt="Toy 1"  class="d-block w-100 slider-img">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://img.freepik.com/free-photo/fluffy-toy-texture-close-up_23-2149686887.jpg?semt=ais_hybrid&w=740&q=80" alt="Toy 2"  class="d-block w-100 slider-img">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://4.imimg.com/data4/PH/LD/MY-16439721/soft-toys.jpg" alt="Toy 3"  class="d-block w-100 slider-img">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://t3.ftcdn.net/jpg/00/74/44/28/360_F_74442850_C0PsTWPFlOfwcPA3AybYefXDBmnWVsWX.jpg" alt="Toy 4"  class="d-block w-100 slider-img">
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="container my-5 text-center">
+  <h2>Welcome to Cozy Toys</h2>
+  <p>
+    Cozy Toys is a happy place for kids and parents.  
+    We provide safe, colorful, and lovable toys that bring joy and comfort.
+  </p>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="container my-5">
+  <h2 class="text-center mb-4">Our Toys</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <a href="product.html?product=white-bunny" class="product-link">
+      <div class="card toy-card">
+        <img src="https://m.media-amazon.com/images/I/615W+PYLE+L._AC_SL1000_.jpg">
+        <div class="card-body text-center">
+          <h5>White Bunny</h5>
+          <p>₹499</p>
+        </div>
+      </div>
+    </a>
+    </div>
+
+    <div class="col-md-4">
+      <a href="product.html?product=cute-bunny" class="product-link">
+      <div class="card toy-card">
+        <img src="https://m.media-amazon.com/images/I/71JBU7B6BbL._AC_UF894,1000_QL80_.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h5>Cute Bunny</h5>
+          <p>₹399</p>
+        </div>
+      </div>
+    </a>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card toy-card">
+        <a href="product.html?product=soft-doll" class="product-link">
+        <img src="https://image.made-in-china.com/202f0j00OsqoZwGjPhck/Wholesale-High-Quality-Bunny-Plush-Toy-Customized-Cute-Wearing-Dress-Rabbit-Stuffed-Animal-Plush-Toy.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h5>Soft Doll</h5>
+          <p>₹599</p>
+        </div>
+      </div>
+    </a>
+    </div>
+    <div class="col-md-4">
+  <a href="product.html?product=brown-teddy" class="product-link">
+    <div class="card toy-card">
+      <img src="https://www.plushinarush.com/cdn/shop/products/10-medium-basic-bear-set-9410-12-778278541.jpg?v=1744944054" class="card-img-top">
+      <div class="card-body text-center">
+        <h5>Brown Teddy</h5>
+        <p>₹699</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="col-md-4">
+  <a href="product.html?product=pink-doll" class="product-link">
+    <div class="card toy-card">
+      <img src="https://m.media-amazon.com/images/I/51AIuf8zVOL._AC_UF1000,1000_QL80_.jpg" class="card-img-top">
+      <div class="card-body text-center">
+        <h5>Pink Doll</h5>
+        <p>₹549</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="col-md-4">
+  <a href="product.html?product=mini-bear" class="product-link">
+    <div class="card toy-card">
+      <img src="https://www.missmerylin.in/cdn/shop/files/9_04b21115-1c31-45bc-8a1a-21811a064640.png?v=1735890416">
+      <div class="card-body text-center">
+        <h5>Mini Bear</h5>
+        <p>₹449</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center p-4">
+  <p>Thank you for visiting Cozy Toys🧸💖</p>
+</footer>
+<!-- ================= FOOTER ================= -->
+<footer class="cozy-footer">
+  <div class="container py-5">
+    <div class="row text-center text-md-start">
+
+      <!-- LEFT: LOGO + TAGLINE -->
+      <div class="col-md-4 mb-4">
+        <div class="footer-logo">
+          <span class="footer-bear">🧸</span>
+          <h4>Cozy Toys</h4>
+        </div>
+        <p class="footer-text">
+          Humans live with cozy toys.
+        </p>
+      </div>
+
+      <!-- CENTER: MORE INFORMATION -->
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-title">More Information</h5>
+        <ul class="footer-links">
+          <li>Privacy Policy</li>
+          <li>Order and Shipping</li>
+          <li>Refund and Returns Policy</li>
+          <li>Terms and Conditions of Use</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: CONTACT -->
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-title">Contact Us</h5>
+        <p>Email: cozytoys456@www.com</p>
+        <p>Phone: +91 8556568976</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <div class="footer-icons">
+      <span class="bear-left">🐻</span>
+      <span class="bear-right">🐻</span>
+    </div>
+    <p>Copyright © Cozy Toys</p>
+  </div>
+</footer>
+<!-- ================= LOGIN POPUP ================= -->
+<div id="loginPopup" class="login-popup-overlay">
+  <div class="login-popup-box">
+    <i class="fa-solid fa-arrow-left back-arrow" onclick="closeLoginPopup()"></i>
+
+
+    <span class="close-popup" onclick="closeLoginPopup()">×</span>
+
+    <p class="popup-text">If you already have an account</p>
+    <button class="btn popup-btn" onclick="goToLogin()">Log In</button>
+
+    <hr>
+
+    <p class="popup-text">If you don’t have an account</p>
+    <button class="btn popup-btn" onclick="goToSignup()">Sign In</button>
+  </div>
+</div>
+<!-- AUTH MODAL -->
+<div id="authModal" class="auth-overlay hidden">
+  <div class="auth-box">
+
+    <!-- HEADER -->
+    <div class="auth-header">
+      <span class="back-btn" onclick="closeAuth()">←</span>
+      <span class="close-btn" onclick="closeAuth()">×</span>
+    </div>
+
+    
+
+    <!-- LOGIN -->
+    <div id="loginForm">
+      <h4>Login</h4>
+      <input id="loginEmail" type="email" placeholder="Email">
+      <input id="loginPassword" type="password" placeholder="Password">
+      <button onclick="loginUser()">Login</button>
+      <p>Don’t have an account?  
+        <span onclick="showSignup()">Sign Up</span>
+      </p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signupForm" class="hidden">
+      <h4>Sign Up</h4>
+      <input id="name" placeholder="Full Name">
+      <input id="email" placeholder="Email">
+      <input id="mobile" placeholder="Mobile Number">
+      <input id="password" type="password" placeholder="Password">
+      <input id="confirmPassword" type="password" placeholder="Confirm Password">
+      <button onclick="signupUser()">Sign Up</button>
+      <p>Already have an account?  
+        <span onclick="showLogin()">Login</span>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("themeIcon");
+
+    if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        body.classList.add("light");
+        icon.classList.replace("fa-sun", "fa-moon");
+    } else {
+        body.classList.remove("light");
+        body.classList.add("dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+    }
+
+    /* THIS LINE SAVES THE THEME */
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+    );
+}
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function openLoginPopup() {
+  document.getElementById("loginPopup").style.display = "flex";
+}
+
+function closeLoginPopup() {
+  document.getElementById("loginPopup").style.display = "none";
+}
+</script>
+<script>
+function goToLogin() {
+  window.location.href = "login.html";
+}
+
+function goToSignup() {
+  window.location.href = "signup.html";
+}
+</script>  <script>
+const modal = document.getElementById("authModal");
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+
+/* AUTO POPUP AFTER 10 SEC */
+setTimeout(() => openAuth(), 10000);
+
+function openAuth() {
+  modal.classList.remove("hidden");
+  showLogin();
+}
+function closeAuth() {
+  modal.classList.add("hidden");
+}
+
+function showSignup() {
+  loginForm.classList.add("hidden");
+  signupForm.classList.remove("hidden");
+}
+function showLogin() {
+  signupForm.classList.add("hidden");
+  loginForm.classList.remove("hidden");
+}
+
+/* VALIDATION HELPERS */
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function signupUser() {
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim().toLowerCase();
+  const mobile = mobileInput.value.trim();
+  const pass = passwordInput.value;
+  const confirm = confirmPasswordInput.value;
+
+  if (!name || !email || !mobile || !pass || !confirm)
+    return alert("All fields are mandatory");
+
+  if (!emailRegex.test(email))
+    return alert("Invalid email address");
+
+  if (pass.length < 6)
+    return alert("Password must be at least 6 characters");
+
+  if (pass !== confirm)
+    return alert("Passwords do not match");
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  if (users.find(u => u.email === email))
+    return alert("Email already registered");
+
+  users.push({ name, email, pass });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Signup successful");
+  showLogin();
+}
+
+function loginUser() {
+  const email = loginEmail.value.trim().toLowerCase();
+  const pass = loginPassword.value;
+
+  if (!email || !pass)
+    return alert("Fill all fields");
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const user = users.find(u => u.email === email && u.pass === pass);
+
+  if (!user) return alert("Invalid credentials");
+
+  alert("Welcome " + user.name);
+  closeAuth();
+}
+</script>
+
+
+
+
+
+</body>
+</html>     

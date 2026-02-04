@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up – Cozy Toys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+
+<div class="auth-container">
+  <h2>Sign Up</h2>
+
+  <input type="text" id="fullName" placeholder="Full Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="text" id="mobile" placeholder="Mobile Number">
+  <input type="password" id="password" placeholder="Password">
+  <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+  <button class="btn auth-btn" onclick="signup()">Sign Up</button>
+
+  <p class="auth-link">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </p>
+</div>
+
+<script>
+const savedTheme = localStorage.getItem("theme") || "light";
+document.body.className = savedTheme;
+</script>
+
+<script>
+function signup() {
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const mobile = document.getElementById("mobile").value.trim();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  // Mandatory fields
+  if (!name || !email || !mobile || !password || !confirmPassword) {
+    alert("Mandatory information. Kindly fill it.");
+    return;
+  }
+
+  // Name validation
+  const namePattern = /^[A-Za-z ]{3,}$/;
+  if (!namePattern.test(name)) {
+    alert("Please enter a valid name.");
+    return;
+  }
+
+  // Email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if (!emailPattern.test(email)) {
+    alert("Not valid information, please check again.");
+    return;
+  }
+
+  // Mobile number validation (10 digits)
+  const mobilePattern = /^[0-9]{10}$/;
+  if (!mobilePattern.test(mobile)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  // Password length
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long.");
+    return;
+  }
+
+  // Password match
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // Email uniqueness
+  const existingUser = users.find(u => u.email === email);
+  if (existingUser) {
+    alert("This email is already registered. Please login.");
+    return;
+  }
+
+  // Save user
+  users.push({ name, email, mobile, password });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Signup successful. Please login.");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>        
